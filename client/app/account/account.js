@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitudeApp')
+angular.module('grApptitude')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {

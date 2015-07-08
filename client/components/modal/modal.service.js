@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitudeApp')
+angular.module('grApptitude')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

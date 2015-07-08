@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitudeApp')
+angular.module('grApptitude')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

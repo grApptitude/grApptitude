@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('grApptitudeApp')
+angular.module('grApptitude')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

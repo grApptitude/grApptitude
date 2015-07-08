@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('grApptitudeApp'));
+  beforeEach(module('grApptitude'));
   beforeEach(module('socketMock'));
 
   var MainCtrl,

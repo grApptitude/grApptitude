@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitudeApp', [
+angular.module('grApptitude', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
