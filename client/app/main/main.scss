@@ -8,9 +8,14 @@
 }
 
 #banner h1 {
+    font-family: 'Architects Daughter';
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+
+#banner p {
+  font-family: 'Questrial';
 }
 
 .hero-unit {
@@ -23,6 +28,7 @@
 }
 
 .footer {
+    font-family: 'Questrial';
     text-align: center;
     padding: 30px 0;
     margin-top: 70px;
