@@ -42,20 +42,20 @@ var all = {
   },
 
   facebook: {
-    clientID:     process.env.FACEBOOK_ID || 'id',
-    clientSecret: process.env.FACEBOOK_SECRET || 'secret',
+    clientID:     process.env.FACEBOOK_ID || '513132368839991',
+    clientSecret: process.env.FACEBOOK_SECRET || '33ad99fefd4f79b31328bdbb72d9f34a',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
   },
 
   twitter: {
-    clientID:     process.env.TWITTER_ID || 'id',
-    clientSecret: process.env.TWITTER_SECRET || 'secret',
+    clientID:     process.env.TWITTER_ID || 'keEg60ub9dQNGA7z9BDF6wT0q',
+    clientSecret: process.env.TWITTER_SECRET || '9BNHeMox0nI3IX3ZI99CCensgrzMYu9nEfwH3qiERohGnP4dIx',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
   },
 
   google: {
-    clientID:     process.env.GOOGLE_ID || 'id',
-    clientSecret: process.env.GOOGLE_SECRET || 'secret',
+    clientID:     process.env.GOOGLE_ID || '975113009671-r9k63cam55k3env6shmtit1588v7vqat.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'psu7Bd8P3NX5ZRgiS1Jrayt9',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
   }
 };
