@@ -6,38 +6,44 @@
 
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="col-md-12">
+<div class="container">
 
-  new thanks
-  imgUser - userName - @userName
-  message, post, text, link, image
-  attach file.
-
-  <div class="panel panel-default">
+  <div class="panel panel-success">
     <div class="panel-heading">
 
       <div class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="..." alt="...">
-          </a>
+        <div class="">
+            <img class="img-responsive media-object img-rounded" style="border: solid 1px" width="100px" src="https://mcmakeupmadrid.files.wordpress.com/2012/02/cara-de-maggie-grace.jpg" alt="...">
         </div>
-        <div class="media-body">
-          <h4 class="media-heading">Middle aligned media</h4>
-          ...
+        <div >
+          <h5 class="text-left">Lenor Larez - @leitolarez</h5>
+          <h3 class="text-left">New grapp</h3>
         </div>
       </div>
 
-
-      <h3 class="panel-title">New grapp thankful to/for:</h3>
-      <h5>Hernan Piña - @canelacho</h5>
     </div>
     <div class="panel-body">
-      Panel content
+
+      <form>
+        <textarea class="form-control nput-lg" rows="3" placeholder="Write your new grapp thanking to / for"></textarea>
+        <br>
+        <input id="attachFile" type="file" style="display:none">
+        <div class="input-append">
+          <input id="photoCover" class="input-large" type="text" ng-hide="true">
+          <a class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</a>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Thanks</button>
+      </form>
     </div>
+  </div>
+
 </div>
 
-  demo here!
 
-This is the newGrapp view.
-</div>
+<script type="text/javascript">
+  $('input[id=attachFile]').change(function() {
+  alert( "Probando momento del evento" );
+  $('#photoCover').val($(this).val());
+  });
+</script>
