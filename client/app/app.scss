@@ -3,6 +3,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Questrial|Ubuntu:400,300italic|Architects+Daughter);
 
 /**
  * App-wide Styles
@@ -20,5 +21,6 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'newGrapp/newGrapp.scss';
 @import 'modal/modal.scss';
 // endinjector

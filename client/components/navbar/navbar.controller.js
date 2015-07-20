@@ -4,7 +4,7 @@ angular.module('grApptitude')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'link': '/main'
     }];
 
     $scope.isCollapsed = true;
@@ -14,7 +14,7 @@ angular.module('grApptitude')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/main');
     };
 
     $scope.isActive = function(route) {
