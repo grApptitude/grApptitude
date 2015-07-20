@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitudeApp')
+angular.module('grApptitude')
   .controller('ProfileCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

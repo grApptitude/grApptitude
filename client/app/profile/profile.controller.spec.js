@@ -3,7 +3,7 @@
 describe('Controller: ProfileCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('grApptitudeApp'));
+  beforeEach(module('grApptitude'));
 
   var ProfileCtrl, scope;
 
