@@ -1,6 +1,9 @@
 'use strict';
 
 angular.module('grApptitude')
-  .controller('ProfileCtrl', function ($scope) {
-    $scope.message = 'Hello';
+  .controller('ProfileCtrl', function ($scope, Auth) {
+    // $scope.message = 'Hello';
+
+    $scope.getCurrentUser = Auth.getCurrentUser;
+
   });

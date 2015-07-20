@@ -2,10 +2,15 @@
 
 angular.module('grApptitude')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/main'
-    }];
+    // $scope.menu = [{
+    //   'title': 'Home',
+    //   'link': '/main'
+    //   },
+    //   {
+    //     'title': 'Grapp',
+    //     'link': '/newGrapp'
+    //   }
+    // ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -14,7 +19,7 @@ angular.module('grApptitude')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/main');
+      $location.path('/login');
     };
 
     $scope.isActive = function(route) {
