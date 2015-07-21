@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('grapptitude')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http, socket, User) {
+    $scope.users = User.query();
+
+    // $scope.awesomeThings = [];
   //
   //   $http.get('/api/things').success(function(awesomeThings) {
   //     $scope.awesomeThings = awesomeThings;
