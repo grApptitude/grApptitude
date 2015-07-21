@@ -16,7 +16,7 @@
             <img class="img-responsive media-object img-rounded" style="border: solid 1px" width="100px" src="https://mcmakeupmadrid.files.wordpress.com/2012/02/cara-de-maggie-grace.jpg" alt="...">
         </div>
         <div >
-          <h5 class="text-left">Lenor Larez - @leitolarez</h5>
+          <h5 class="text-left">Leonor Larez - @leitolarez</h5>
           <h3 class="text-left">New grapp</h3>
         </div>
       </div>
@@ -27,13 +27,12 @@
       <form>
         <textarea class="form-control nput-lg" rows="3" placeholder="Write your new grapp thanking to / for"></textarea>
         <br>
-        <input id="attachFile" type="file" style="display:none">
-        <div class="input-append">
-          <input id="photoCover" class="input-large" type="text" ng-hide="true">
-          <a class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</a>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-success">Thanks</button>
+          <input id="attachFile" type="file" style="display:none">
+          <div class="input-append col-xs-2">
+            <input id="photoCover" class="input-large" type="text" ng-hide="true">
+            <a class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</a>
+          </div>
+        <button type="submit" class="btn btn-success col-xs-2">Thanks</button>
       </form>
     </div>
   </div>
@@ -43,7 +42,7 @@
 
 <script type="text/javascript">
   $('input[id=attachFile]').change(function() {
-  alert( "Probando momento del evento" );
+  // alert( "Probando momento del evento" );
   $('#photoCover').val($(this).val());
   });
 </script>
