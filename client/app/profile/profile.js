@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .config(function ($stateProvider) {
     $stateProvider
       .state('profile', {

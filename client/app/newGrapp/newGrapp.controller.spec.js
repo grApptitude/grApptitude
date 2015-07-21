@@ -3,7 +3,7 @@
 describe('Controller: NewGrappCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('grApptitude'));
+  beforeEach(module('grapptitude'));
 
   var NewGrappCtrl, scope;
 

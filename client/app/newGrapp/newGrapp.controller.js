@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .controller('NewGrappCtrl', function ($scope) {
     $scope.message = 'Hello';
   });
