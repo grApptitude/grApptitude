@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};

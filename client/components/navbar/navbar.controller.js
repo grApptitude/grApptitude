@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     // $scope.menu = [{
     //   'title': 'Home',

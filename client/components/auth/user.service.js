@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id/:controller', {
       id: '@_id'

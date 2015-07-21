@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('grApptitude')
+angular.module('grapptitude')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
@@ -16,7 +16,7 @@ angular.module('grApptitude')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/main');
         })
         .catch( function(err) {
           err = err.data;
