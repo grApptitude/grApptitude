@@ -14,6 +14,7 @@
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
             <a ng-href="{{item.link}}">{{item.title}}</a>
         </li>
+        <li style="padding-top:5px; border:0"><img src="assets/images/logo_clean_frame_white_inside.png" width="40px" height="40px"></iframe></li>
         <li ng-show="isLoggedIn()" ng-class=""><a href="/main">GrappWall</a></li>
         <li ng-show="isLoggedIn()" ng-class=""><a href="/newGrapp">New Grapp</a></li>
       </ul>
