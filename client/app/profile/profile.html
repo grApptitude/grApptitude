@@ -2,11 +2,53 @@
 
 <div class="col-md-12">
   <p class="title">This is {{getCurrentUser().name}}'s profile</p>
+  <h3>User email: {{getCurrentUser().email}}</h3>
+  <h3>User provider: {{getCurrentUser().provider}}</h3>
+  <h3>user id: {{getCurrentUser()._id}}</h3>
+  <h3>user role: {{getCurrentUser().role}}</h3>
 
   <div class="">
     <img class="profile-pic" src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/148741_10152333969561623_5698076887232696695_n.jpg?oh=fa86bf721e0bd5836a8b284b4ae991ad&oe=561C6DA3" alt="">
   </div>
 
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>Change Password</h1>
+      </div>
+      <div class="col-sm-8">
+        <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
+
+          <div class="form-group">
+            <label>Current Password</label>
+
+            <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
+                   mongoose-error/>
+            <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ errors.other }}
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>New Password</label>
+
+            <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+                   ng-minlength="3"
+                   required/>
+            <p class="help-block"
+               ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
+              Password must be at least 3 characters.
+            </p>
+          </div>
+
+          <p class="help-block"> {{ message }} </p>
+
+          <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 </div>
