@@ -1,3 +1,27 @@
 #navbar-main {
   font-family: 'Questrial';
 }
+
+#logo-navbar {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+//
+// img#logo-navbar {
+//   width: 40px;
+// }
+div.navbar-brand {
+  display: inline;
+}
+
+.navbar-brand {
+  font-family: 'Architects Daughter';
+  font-size: 30px;
+  padding: 5px 0 0 5px;
+}
+
+.navbar-brand span {
+  color: #65a36d;
+  vertical-align: center;
+}
