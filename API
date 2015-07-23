@@ -1,0 +1,23 @@
+newGrappSchema
+  author_Id: 'String';
+  grapp: 'String';
+  timestamp: 'date';
+  attachUrl: 'String';
+  tagedUsers: 'String';
+
+// for Phase 2
+
+  attachments: [
+    {
+      provider: String,
+      url: String
+    },
+      {
+        provider: String,
+        url: String
+      }
+  ];
+
+  tagedUsers: [user_id, user_id];
+
+userSchema

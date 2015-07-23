@@ -19,11 +19,11 @@
     <div class="panel-body">
 
       <form>
-        <textarea class="form-control nput-lg" rows="3" placeholder="Write your new grapp thanking to / for"></textarea>
+        <textarea class="form-control nput-lg" ng-model="newGrapp.grapp" rows="3" placeholder="Write your new grapp thanking to / for"></textarea>
         <br>
           <input id="attachFile" type="file" style="display:none">
           <div class="input-append col-xs-3">
-            <input id="photoCover" class="input-large" type="text" ng-hide="true">
+            <input id="photoCover" ng-model="newGrapp.attachUrl" class="input-large" type="text" ng-hide="false">
             <a class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</a>
           </div>
         <button type="submit" class="btn btn-success col-xs-3">Thanks</button>
@@ -36,8 +36,12 @@
 
 
 <script type="text/javascript">
-  $('input[id=attachFile]').change(function() {
+  var $attach = $('input[id=attachFile]');
+  var $input = $('#photoCover');
+  $attach.change(function() {
   // alert( "Probando momento del evento" );
-  $('#photoCover').val($(this).val());
+  $input.val($attach.val());
+  // console.log($attach.val());
   });
+  console.log($attach.val());
 </script>
