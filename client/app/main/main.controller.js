@@ -2,7 +2,7 @@
 
 angular.module('grapptitude')
   .controller('MainCtrl', function ($scope, $http, socket, User) {
-    $scope.users = User.query();
+    // $scope.users = User.query();
 
     // $scope.awesomeThings = [];
   //
