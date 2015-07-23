@@ -1,17 +1,17 @@
 <!-- <p class="lead">grapptitude is where you will be able to thank the people who has made a difference in your life.</p> -->
 
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Sign up</h1>
+      <h3>Sign up</h3>
      </div>
 
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
-        <!--<div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
           <label>Name</label>
 
@@ -64,27 +64,22 @@
           <a class="btn btn-default btn-lg btn-register" href="/login">
             Login
           </a>
-        </div> -->
+        </div>
 
-        <!-- <hr> -->
+        <hr>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-              <a class="btn btn-lg btn-facebook" href="" ng-click="loginOauth('facebook')">
-                <i class="fa fa-facebook"></i> Facebook
-              </a>
-            </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-            <a class="btn btn-lg btn-google-plus" href="" ng-click="loginOauth('google')">
-              <i class="fa fa-google-plus"></i> Google+
+            <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+              <i class="fa fa-facebook"></i> Sign up with Facebook
             </a>
-            </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-            <a class="btn btn-lg btn-twitter" href="" ng-click="loginOauth('twitter')">
-              <i class="fa fa-twitter"></i> Twitter
+            <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+              <i class="fa fa-google-plus"></i> Sign up with Google+
             </a>
-          </div>
+
+            <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
+              <i class="fa fa-twitter"></i> Sign up with Twitter
+            </a>
 
 
         </div>
