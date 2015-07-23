@@ -1,1 +1,1 @@
-FROM digitallyseamless/nodejs-bower-grunt-runtime
+FROM digitallyseamless/nodejs-bower-grunt-runtime:compass-support
