@@ -15,7 +15,7 @@ angular.module('grapptitude')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/main');
+          $location.path('/grappWall');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

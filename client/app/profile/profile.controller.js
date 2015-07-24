@@ -2,8 +2,7 @@
 
 angular.module('grapptitude')
   .controller('ProfileCtrl', function ($scope, Auth, User) {
-    // $scope.message = 'Hello';
-    // $scope.users = User.query();
+    $scope.users = User.query(Auth.getCurrentUser()._id);
     $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.errors = {};

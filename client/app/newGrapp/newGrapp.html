@@ -43,7 +43,7 @@
         </div>
         <div class="media-body">
           <h4 class="media-heading">{{ getCurrentUser().name }}</h4>
-          <h5>@{{getCurrentUser().name}}</h5>
+          <h5>@{{(getCurrentUser().name).toLowerCase()}}</h5>
           <h3 class="text-left">New grapp</h3>
         </div>
       </div>
@@ -54,18 +54,39 @@
       <form class="form" name="form" ng-submit="newGrapp(form)" novalidate>
         <textarea class="form-control nput-lg" ng-model="newGrapp.grapp" rows="3" placeholder="Write your new grapp thanking to / for"></textarea>
         <br>
+
+
           <input id="attachFile" type="file" class="form-group">
           <div class="input-append col-xs-3">
-            <input id="photoCover" ng-model="newGrapp.attachUrl" class="input-large" type="text" ng-hide="false">
+            <input id="photoCover" ng-model="newGrapp.attachUrl" class="input-large" type="text" ng-hide="true">
             <a class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</a>
           </div>
+
+
+        <!-- <div flow-init="{target: '/upload'}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message">
+          <span class="btn btn-primary" flow-btn>Attach</span>
+
+          <table>
+            <tr ng-repeat="file in $flow.files">
+                <td>{{$index+1}}</td>
+                <td>{{file.name}}</td>
+                <td>{{file.msg}}</td>
+            </tr>
+          </table>
+        </div> -->
+
+
         <button type="submit" class="btn btn-success col-xs-3">Thanks</button>
         <span class="col-xs-6"></span>
+
+
+
       </form>
 
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
   var $attach = $('input[id=attachFile]');
   var $input = $('#photoCover');

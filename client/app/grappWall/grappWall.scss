@@ -1,0 +1,61 @@
+
+.grapp-container {
+  border: 1px solid #eee;
+  padding: 25px 50px;
+  // border-radius: 5px;
+  margin: 0 auto;
+}
+
+.grapp-container .name-lockup {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grapp-container .name-lockup .avatar {
+    border-radius: 5px;
+    float: left;
+    width: 50px;
+}
+
+.grapp-container .name-lockup div.name {
+  display: inline-block;
+  font-size: 1.3em;
+  padding-left: 10px;
+  font-weight: bold;
+  // padding-top: 7px;
+}
+
+.grapp-container .name-lockup .name span {
+  font-weight: normal;
+  color: #999;
+  font-size: 0.8em;
+  display: block;
+}
+
+.grapp-container blockquote {
+  border-left: none;
+  margin: 30px 0;
+  font-family: 'Questrial';
+  font-size: 2em;
+}
+
+.grapp-container .actions {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.grapp-container .actions [class*="icon-"] {
+  color: #999;
+  margin-right: 25px;
+}
+
+.grapp-container .actions [class*="icon-"] .icon-star {
+  color: #ff9600;
+}
+
+.grapp-container time {
+  color: #999;
+  font-size: 0.7em;
+}

@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var NewGrappSchema = new Schema({
   author_Id: String,
+  userName: String,
   grapp: String,
   timestamp: Date,
   attachUrl: String,

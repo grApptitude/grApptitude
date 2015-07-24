@@ -1,0 +1,27 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div ng-repeat="grapp in newGrapps">
+    <div class="grapp-container">
+
+      <div class="name-lockup">
+        <img class="avatar" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xta1/v/t1.0-1/p160x160/1966715_829810260383576_3628815782450659215_n.jpg?oh=9b1d0c864e25ea5554d1aa5e938c40b5&oe=5651226A&__gda__=1447651703_25790bcdbf726b3ecb497856930914ec">
+        <div class="name"> {{ grapp.userName }}<span> @{{ (grapp.userName).toLowerCase()}}</span></div>
+      </div>
+
+      <blockquote>
+        <span>{{ grapp.grapp }}</span>
+      </blockquote>
+
+      <div class="actions">
+        <!-- <i class="icon-reply glyphicon glyphicon-reply"> Reply</i> -->
+        <i class="icon-rethanks glyphicon glyphicon-retweet"> ReThanks!</i>
+        <i class="icon-star glyphicon glyphicon-star"> Favorited</i>
+        <i class="icon-ellipsis-horizontal glyphicon glyphicon-plus-sign"> More</i>
+      </div>
+
+      <time>{{ grapp.timestamp }}</time>
+    </div>
+  </div>
+
+</div>
