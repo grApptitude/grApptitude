@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('grapptitude')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, User, Auth) {
     $scope.users = User.query(Auth.getCurrentUser()._id);
 
 

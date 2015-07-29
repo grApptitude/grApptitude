@@ -16,7 +16,7 @@ angular.module('grapptitude')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/main');
+          $location.path('/grappWall');
         })
         .catch( function(err) {
           err = err.data;

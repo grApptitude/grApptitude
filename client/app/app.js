@@ -10,7 +10,7 @@ angular.module('grapptitude', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/login');
+      .otherwise('/grappWall');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

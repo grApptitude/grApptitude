@@ -15,11 +15,13 @@ exports.setup = function (User, config) {
           user = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
-            role: 'user',
-            username: profile.username,
+            role: 'admin',
+            username: profile.emails[0].value.split('@')[0],
+            img: profile._json.image.url.replace("?sz=50", "?"),
             provider: 'google',
             google: profile._json
           });
+
           user.save(function(err) {
             if (err) done(err);
             return done(err, user);

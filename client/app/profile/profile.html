@@ -8,11 +8,12 @@
   <h3>user role: {{getCurrentUser().role}}</h3>
 
   <div class="">
-    <img class="profile-pic" src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/148741_10152333969561623_5698076887232696695_n.jpg?oh=fa86bf721e0bd5836a8b284b4ae991ad&oe=561C6DA3" alt="">
+    <h3>user image from {{ getCurrentUser().provider }}</h3>
+    <img class="profile-pic" src="{{ getCurrentUser().img }}" alt="">
   </div>
 
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col-sm-8">
         <h1>Change Password</h1>
@@ -48,7 +49,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 </div>

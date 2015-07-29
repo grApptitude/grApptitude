@@ -13,8 +13,8 @@ angular.module('grapptitude')
         Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
         .then( function() {
           // Limpiar imputs
-          $scope.user.oldPassword = $pristine;
-          $scope.user.newPassword = $pristine;
+          $scope.user.oldPassword = '';
+          $scope.user.newPassword = '';
           $scope.message = 'Password successfully changed.';
 
         })

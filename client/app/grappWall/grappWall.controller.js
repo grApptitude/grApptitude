@@ -5,10 +5,10 @@ angular.module('grapptitude')
     $scope.users = User.query();
     $scope.getCurrentUser = Auth.getCurrentUser;
 
-    $scope.newGrapps = []
+    $scope.newGrapps = [];
       $http.get('/api/newGrapps').success(function(newGrapps) {
         $scope.newGrapps = newGrapps;
-        var users = [];
+        // var users = [];
 
         // User.find({ id: user._id });
         // angular.forEach($scope.users, function(u, i) {
