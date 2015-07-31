@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('grapptitude')
-  .controller('NewGrappCtrl', function ($scope, $http, User, Auth) {
+  .controller('NewGrappCtrl', function ($scope, $http, User, Auth, $location) {
     $scope.users = User.query();
     $scope.getCurrentUser = Auth.getCurrentUser;
 
@@ -24,6 +24,8 @@ angular.module('grapptitude')
         });
         $scope.newGrapp = '';
         $input.val('');
+        // enrutar al wall aqui.
+        $location.path('/grappWall');
       };
 
   });

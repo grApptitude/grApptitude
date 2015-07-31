@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <div ng-repeat="grapp in newGrapps | limitTo: limit | orderBy : '-timestamp' ">
+  <div ng-repeat="grapp in newGrapps | orderBy : '-timestamp' | limitTo: limit ">
     <div class="grapp-container">
 
       <div class="name-lockup">
@@ -15,17 +15,17 @@
 
       <div class="actions">
         <!-- <i class="icon-reply glyphicon glyphicon-reply"> Reply</i> -->
-        <i class="icon-rethanks glyphicon glyphicon-retweet"> ReThanks!</i>
-        <i class="icon-star glyphicon glyphicon-star"> Favorited</i>
-        <i class="icon-ellipsis-horizontal glyphicon glyphicon-plus-sign"> More</i>
+        <a href="#"><i class="icon-rethanks glyphicon glyphicon-retweet"> ReThanks!</i></a>
+        <a href="#"><i class="icon-star glyphicon glyphicon-star"> Favorited</i></a>
+        <a href="#"><i class="icon-ellipsis-horizontal glyphicon glyphicon-plus-sign"> More</i></a>
       </div>
 
-      <time>{{ grapp.timestamp }}</time>
+      <time>{{ grapp.timestamp | date:'MMM-dd-yyyy - HH:MM'}}</time>
     </div>
   </div>
 
 
-  <div class="btn btn-default">
-    <a href ng-click="incrementLimit()">more</a>
+  <div class="btn btn-default" id="showMore">
+    <a href ng-click="incrementLimit()">More Grapps!</a>
   </div>
 </div>
