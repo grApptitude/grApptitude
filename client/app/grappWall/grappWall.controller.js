@@ -26,4 +26,12 @@ angular.module('grapptitude')
       // });
       });
 
+      // Show more grapps on the screen"
+      var limitStep = 2;
+      $scope.limit = limitStep;
+      $scope.incrementLimit = function() {
+          $scope.limit += limitStep;
+      };
+
+
   });

@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <div ng-repeat="grapp in newGrapps">
+  <div ng-repeat="grapp in newGrapps | limitTo: limit | orderBy : '-timestamp' ">
     <div class="grapp-container">
 
       <div class="name-lockup">
@@ -24,4 +24,8 @@
     </div>
   </div>
 
+
+  <div class="btn btn-default">
+    <a href ng-click="incrementLimit()">more</a>
+  </div>
 </div>
