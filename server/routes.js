@@ -9,6 +9,7 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/s3Uploads', require('./api/s3Upload'));
   app.use('/api/newGrapps', require('./api/newGrapp'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));

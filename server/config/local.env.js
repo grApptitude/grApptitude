@@ -18,6 +18,8 @@ module.exports = {
   GOOGLE_ID:        '975113009671-r9k63cam55k3env6shmtit1588v7vqat.apps.googleusercontent.com',
   GOOGLE_SECRET:    'psu7Bd8P3NX5ZRgiS1Jrayt9',
 
+  AWS_bucket:  'img.grapptitude.com',
+
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };
