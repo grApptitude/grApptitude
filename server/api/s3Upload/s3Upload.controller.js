@@ -4,7 +4,7 @@
 var _ = require('lodash');
 var AWS = require('aws-sdk'),
     crypto = require('crypto'),
-    config = require('./aws.json'),
+    config = require('./img.grapptitude.json'),
     createS3Policy,
     getExpiryTime;
 
