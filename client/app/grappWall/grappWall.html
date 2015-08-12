@@ -10,7 +10,7 @@
       </div>
 
       <blockquote>
-        <span>{{ grapp.grapp }}</span>
+        <span>{{ grapp.grapp | limitTo: limitTextGrapp }}<a href ng-click="showMoreText(grapp.grapp)" ng-show="showTextGrapp"><span> expand </span></a></span>
       </blockquote>
 
       <div class="actions">

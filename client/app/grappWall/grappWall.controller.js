@@ -34,4 +34,33 @@ angular.module('grapptitude')
       };
 
 
+      var limitTextGrapp = 19;
+      var showTextGrapp = true;
+
+      $scope.limitTextGrapp = limitTextGrapp;
+      $scope.showTextGrapp = showTextGrapp;
+
+      console.log($scope.newGrapps.grapp);
+
+      $scope.prueba = function(valor) {
+        if (limitTextGrapp <= valor.length) {
+          console.log("nojoda");
+          $scope.showTextGrapp = false;
+        }
+      }
+
+
+      $scope.showMoreText = function(grappText) {
+        console.log(grappText.length);
+        if (grappText.length > limitTextGrapp) {
+          console.log("SI")
+          $scope.showTextGrapp = false;
+          $scope.limitTextGrapp = grappText.length;
+        }
+      }
+
+
+
+
+
   });
