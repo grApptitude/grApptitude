@@ -78,24 +78,24 @@ angular.module('grapptitude')
                         var s3Params = response;
                         console.log(s3Params);
                         $scope.upload[i] = Upload.upload({
-                            url: 'https://' + 'img.grapptitude.com' + '.s3.amazonaws.com/',
+                            url: 'https://' + s3Params.AWSBucket + '.s3.amazonaws.com/',
                             method: 'POST',
-                            transformRequest: function (data, headersGetter) {
+                            transformRequest: function (fields, headersGetter) {
                                 //Headers change here
                                 var headers = headersGetter();
                                 delete headers['Authorization'];
-                                return data;
+                                // delete headers['authorization'];
+                                console.log(headers);
+                                console.log(fields);
+                                return fields;
                             },
-                            data: {
-                                'key' : 'images/'+ Math.round(Math.random()*10000) + '$$' + file.name,
-                                'acl' : 'public-read',
-                                'Content-Type' : file.type,
-                                'AWSAccessKeyId': s3Params.AWSAccessKeyId,
-                                'success_action_status' : '201',
+                            fields: {
+                                'key' : 'images/' + Math.round(Math.random()*10000) + '$$' + file.name,                                'AWSAccessKeyId': s3Params.AWSAccessKeyId,
+                                'acl' : 'public-read',                                'success_action_status' : '201',
                                 'Policy' : s3Params.s3Policy,
-                                'Signature' : s3Params.s3Signature
+                                'Signature' : s3Params.s3Signature,                                'Content-Type' : file.type
                             },
-                            file: file,
+                            file: file
                         });
                         $scope.upload[i]
                         .then(function(response) {
@@ -120,13 +120,15 @@ angular.module('grapptitude')
                         });
                     });
                 };
+
                 if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    file.progress = parseInt(0);
-                    loop(file, i);
-                }
-                }
+                  for (var i = 0; i < files.length; i++) {
+                      var file = files[i];
+                      file.progress = parseInt(0);
+                      loop(file, i);
+                  }
+                };
+
             };
 
 

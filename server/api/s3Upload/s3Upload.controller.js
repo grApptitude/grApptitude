@@ -2,44 +2,52 @@
 
 // AWS API
 var _ = require('lodash');
-var AWS = require('aws-sdk'),
-    crypto = require('crypto'),
-    config = require('./img.grapptitude.json'),
+// var AWS = require('aws-sdk');
+var crypto = require('crypto');
+var config = require('./grapptitude.json'),
     createS3Policy,
     getExpiryTime;
 
 getExpiryTime = function () {
     var _date = new Date();
-    return '' + (_date.getFullYear()) + '-' + (_date.getMonth() + 1) + '-' +
+    return '' + (_date.getFullYear() + 1) + '-' + (_date.getMonth() + 1) + '-' +
         (_date.getDate() + 1) + 'T' + (_date.getHours() + 3) + ':' + '00:00.000Z';
 };
 
 createS3Policy = function(contentType, callback) {
     var date = new Date();
     var s3Policy = {
-        'expiration': getExpiryTime(),
-        'conditions': [
-            ['starts-with', '$key', 'images/'],
-            {'bucket': config.bucket},
-            {'acl': 'public-read'},
-            ['starts-with', '$Content-Type', contentType],
-            {'success_action_status' : '201'}
+        "expiration": getExpiryTime(),
+        "conditions": [
+            ["starts-with", "$key", "images/"],
+            {"bucket": config.bucket},
+            {"acl": "public-read"},
+            ["starts-with", "$Content-Type", contentType],
+            {"success_action_status" : "201"},
+            ["content-length-range", 0, 1048576]
         ]
     };
+    console.log(s3Policy);
+    // console.log('json: ', config);
 
     // stringify and encode the policy
     var stringPolicy = JSON.stringify(s3Policy);
     var base64Policy = new Buffer(stringPolicy, 'utf-8').toString('base64');
+    console.log('base64 policy:');
+    console.log(base64Policy);
 
     // sign the base64 encoded policy
     var signature = crypto.createHmac('sha1', config.secretAccessKey)
-                        .update(new Buffer(base64Policy, 'utf-8')).digest('base64');
+          .update(base64Policy).digest('base64');
+    console.log('signature:');
+    console.log(signature);
 
     // build the results object
     var s3Credentials = {
         s3Policy: base64Policy,
         s3Signature: signature,
-        AWSAccessKeyId: config.accessKeyId
+        AWSAccessKeyId: config.accessKeyId,
+        AWSBucket: config.bucket
     };
 
     // send it back

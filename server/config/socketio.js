@@ -18,7 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/s3Upload/s3Upload.socket').register(socket);
+  // require('../api/s3Upload/s3Upload.socket').register(socket);
   require('../api/newGrapp/newGrapp.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }

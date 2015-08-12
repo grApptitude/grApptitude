@@ -2,8 +2,8 @@
  * Broadcast updates to client when the model changes
  */
 
-'use strict';
-// 
+// 'use strict';
+//
 // var S3Upload = require('./s3Upload.model');
 //
 // exports.register = function(socket) {
