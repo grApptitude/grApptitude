@@ -45,7 +45,7 @@
 .grapp-container .actions {
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .grapp-container .actions [class*="icon-"] {
@@ -65,4 +65,13 @@
 #showMore {
   margin: 10px;
   width: 100%;
+}
+
+#attImgThum {
+  margin-bottom: 10px;
+  width: 60px;
+}
+
+#attImg {
+  width: 350px;
 }

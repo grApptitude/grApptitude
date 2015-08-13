@@ -9,12 +9,26 @@
         <div class="name"> {{ grapp.userName }}<span> @{{ grapp.user }}</span></div>
       </div>
 
-      <blockquote>
+      <blockquote style="clear:both">
         <span>{{ grapp.grapp | limitTo: limitTextGrapp }}<a href ng-click="showMoreText(grapp.grapp)" ng-show="showTextGrapp"><span> expand </span></a></span>
       </blockquote>
-      <attach ng-repeat="img in grapp.attachUrl">
-        <img src="{{ img.location }}" alt="{{grapp.userImg}}">
+
+      <attach ng-repeat="img in grapp.attachUrl" style="margin-bottom:200px">
+        <a href="" data-toggle="modal" data-target="#info{{ grapp._id + [$index] }}"><img id="attImgThum" src="{{ img.location }}" alt="{{ grapp.userImg }}"></a>
+        <!-- modal for present images -->
+        <div class="modal fade" id="info{{ grapp._id + [$index] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
+          <div style="width:350px" class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color:rgba(0,0,0,0)">
+              <div class="modal-body" style="color:grey" align="center">
+                <img id="attImg" class="img-responsive" src="{{ img.location }}" alt="{{ grapp.userImg }}">
+              </div>
+            </div>
+          </div>
+        </div>
       </attach>
+
+
+
 
       <div class="actions">
         <!-- <i class="icon-reply glyphicon glyphicon-reply"> Reply</i> -->
@@ -25,6 +39,7 @@
 
       <time>{{ grapp.timestamp | date:'MMM-dd-yyyy - HH:MM'}}</time>
     </div>
+
   </div>
 
   <a href ng-click="incrementLimit()">
@@ -32,4 +47,6 @@
     See More Grapps!
   </div>
   </a>
+
+
 </div>
