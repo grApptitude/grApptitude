@@ -64,27 +64,12 @@
 
 
           <div class="col-xs-3 form-group">
-                <div class="btn btn-info" ngf-select ng-model="files" ngf-multiple="true">Attach</div>
-
-          <!-- <div class="col-xs-3 form-group">
-                <input id="" type="file" class="btn" ng-file-select="selectFile($file)"> -->
-
-
-                <!-- <span class="btn btn-info" onclick="$('input[id=attachFile]').click();">Attach</span> -->
+            <div class="btn btn-info " ngf-select ng-model="files" ngf-multiple="true">Attach</div>
                   <!-- <label for="photos">Input Picture</label> -->
                   <!-- <input type="text" class=""  ng-hide="true" > -->
                   <!-- <p class="help-block">Select pictures</p> -->
-                  <div ng-repeat="file in files" class="container">
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width:{{file.progress}}%;">
-                              {{file.name}} : {{file.progress}}
-                          </div>
-                      </div>
-                      <button class="btn btn-ttc" type="button" ng-click="abort($index)" ng-show="file.progress != 100">Abort</button>
-                  </div>
-              </div>
 
-
+            </div>
 
           <!-- <input ng-file-select="onFileSelect($files)" class="btn btn-info" type="file" id="attachFile" multiple>
           <p class="help-block">Select Pictures</p> -->
@@ -93,11 +78,20 @@
         <button type="submit" class="btn btn-success col-xs-3">Thanks</button>
         <span class="col-xs-6"></span>
 
-
-
       </form>
-
     </div>
+
+    <!-- Nice ProgressBar -->
+    <div ng-repeat="file in files" class="progressBar">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width:{{file.progress}}%;">
+                {{file.name}} : {{file.progress}}
+            </div>
+        </div>
+        <button class="btn btn-ttc" type="button" ng-click="abort($index)" ng-show="file.progress != 100">Cancel Upload</button>
+    </div>
+    <!-- end Nice progressBar -->
+
   </div>
 </div>
 <!--
