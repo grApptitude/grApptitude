@@ -8,22 +8,17 @@ angular.module('grapptitude')
     $scope.newGrapps = [];
       $http.get('/api/newGrapps').success(function(newGrapps) {
         $scope.newGrapps = newGrapps;
-
-        console.log(newGrapps);
         // var users = [];
 
         // User.find({ id: user._id });
         // angular.forEach($scope.users, function(u, i) {
         //   if (u === user) {
         //     $scope.users.splice(i, 1);
-
-
         // angular.forEach(newGrapps, function(author_Id) {
 
         //   $http.get('/api/users/:id'+author_Id).success(function(users) {
         //     console.log(users);
         // })
-
         // })
       // });
       });
@@ -34,7 +29,6 @@ angular.module('grapptitude')
       $scope.incrementLimit = function() {
           $scope.limit += limitStep;
       };
-
 
       var limitTextGrapp = 19;
       var showTextGrapp = true;
@@ -51,7 +45,6 @@ angular.module('grapptitude')
         }
       };
 
-
       $scope.showMoreText = function(grappText) {
         // console.log(grappText.length);
         if (grappText.length > limitTextGrapp) {
@@ -60,9 +53,5 @@ angular.module('grapptitude')
           $scope.limitTextGrapp = grappText.length;
         }
       };
-
-
-
-
 
   });
