@@ -93,13 +93,13 @@ angular.module('grapptitude')
           return;
         }
         $http.post('/api/newGrapps', {
+          attachUrl: $scope.imageUploads,
           authorId: $scope.getCurrentUser()._id,
-          userName: $scope.getCurrentUser().name,
+          grapp: $scope.newGrapp.grapp,
           user: $scope.getCurrentUser().username,
           userImg: $scope.getCurrentUser().img,
-          grapp: $scope.newGrapp.grapp,
-          timestamp: new Date(),
-          attachUrl: $scope.imageUploads
+          userName: $scope.getCurrentUser().name,
+          timestamp: new Date()
           // tagedUser: $scope.newGrapp.tagedUser
         });
         $scope.newGrapp = '';
