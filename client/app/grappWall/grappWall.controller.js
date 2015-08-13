@@ -8,6 +8,8 @@ angular.module('grapptitude')
     $scope.newGrapps = [];
       $http.get('/api/newGrapps').success(function(newGrapps) {
         $scope.newGrapps = newGrapps;
+
+        console.log(newGrapps);
         // var users = [];
 
         // User.find({ id: user._id });
@@ -40,7 +42,7 @@ angular.module('grapptitude')
       $scope.limitTextGrapp = limitTextGrapp;
       $scope.showTextGrapp = showTextGrapp;
 
-      console.log($scope.newGrapps.grapp);
+      // console.log($scope.newGrapps.grapp);
 
       $scope.prueba = function(valor) {
         if (limitTextGrapp <= valor.length) {
@@ -51,9 +53,9 @@ angular.module('grapptitude')
 
 
       $scope.showMoreText = function(grappText) {
-        console.log(grappText.length);
+        // console.log(grappText.length);
         if (grappText.length > limitTextGrapp) {
-          console.log('SI');
+          // console.log('SI');
           $scope.showTextGrapp = false;
           $scope.limitTextGrapp = grappText.length;
         }

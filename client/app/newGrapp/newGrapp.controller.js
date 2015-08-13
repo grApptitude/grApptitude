@@ -1,64 +1,14 @@
 'use strict';
 
 angular.module('grapptitude')
-  .controller('NewGrappCtrl', function ($scope, $http, User, Auth, $location, Upload) {
+  .controller('NewGrappCtrl', function ($scope, $http, $cookieStore, User, Auth, $location, Upload) {
     $scope.users = User.query();
     $scope.getCurrentUser = Auth.getCurrentUser;
 
-
-    // $scope.$watch('files', function () {
-    //   console.log($scope.files);
-    //   $scope.upload($scope.files);
-    // });
-    //
-    // $scope.upload = function (files) {
-    //
-    //         var getPolicy = function (file) {
-    //         $http.get('/api/s3Uploads/s3Policy?mimeType='+ file.type).success(function(response) {
-    //             var s3Params = response;
-    //             console.log(s3Params);
-    //             Upload.upload({
-    //                 url: 'https://' + 'img.grapptitude.com' + '.s3.amazonaws.com/',
-    //                 method: 'POST',
-    //                 transformRequest: function (data, headersGetter) {
-    //                     //Headers change here
-    //                     var headers = headersGetter();
-    //                     delete headers['Authorization'];
-    //                     return data;
-    //                 },
-    //                 data: {
-    //                     'key' : 'images/'+ Math.round(Math.random()*10000) + '$$' + file.name,
-    //                     'acl' : 'public-read',
-    //                     'Content-Type' : file.type,
-    //                     'AWSAccessKeyId': s3Params.AWSAccessKeyId,
-    //                     'success_action_status' : '201',
-    //                     'Policy' : s3Params.s3Policy,
-    //                     'Signature' : s3Params.s3Signature
-    //                 },
-    //                 file: file,
-    //               }).progress(function (evt) {
-    //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-    //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-    //               }).success(function (data, status, headers, config) {
-    //                 console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-    //               }).error(function (data, status, headers, config) {
-    //                 console.log('error status: ' + status);
-    //               });
-    //       });
-    //     };
-    //
-    //       if (files && files.length) {
-    //         for (var i = 0; i < files.length; i++) {
-    //           var file = files[i];
-    //           getPolicy(file);
-    //         }
-    //       }
-    //
-    // };
-
+    var token = $cookieStore.get('token');
 
     $scope.$watch('files', function () {
-      console.log($scope.files);
+      // console.log($scope.files);
       $scope.uploadFiles($scope.files);
     });
     $scope.imageUploads = [];
@@ -68,36 +18,43 @@ angular.module('grapptitude')
             };
 
             $scope.uploadFiles = function (files) {
-                // $http.get('/api/s3Uploads').success(function(response) {
-                //   console.log(response);
-                // });
-                // $scope.files = files;
                 $scope.upload = [];
+
                 var loop = function (file, i) {
                     $http.get('/api/s3Uploads/s3Policy?mimeType='+ file.type).success(function(response) {
                         var s3Params = response;
-                        console.log(s3Params);
+
+                        $cookieStore.remove('token');
                         $scope.upload[i] = Upload.upload({
                             url: 'https://' + s3Params.AWSBucket + '.s3.amazonaws.com/',
                             method: 'POST',
-                            transformRequest: function (fields, headersGetter) {
-                                //Headers change here
-                                var headers = headersGetter();
-                                delete headers['Authorization'];
-                                // delete headers['authorization'];
-                                console.log(headers);
-                                console.log(fields);
-                                return fields;
-                            },
+                            // transformRequest: function (data, headersGetter, status) {
+                            //     //Headers change here
+                            //     var headers = headersGetter();
+                            //     delete headers['authorization'];
+                            //     delete headers.Authorization;
+                            //     // delete headers['accept'];
+                            //     console.log(headers);
+                            //     // console.log(data);
+                            //     var data = headers;
+                            //     return data;
+                            // },
+                            // headers: {
+                            //   'Authorization': function(config) {
+                            //     return undefined;
+                            //   },
+                            //   'authorization': undefined
+                            // },
                             fields: {
-                                'key' : 'images/' + Math.round(Math.random()*10000) + '$$' + file.name,                                'AWSAccessKeyId': s3Params.AWSAccessKeyId,
+                                'key' : 'images/' + $scope.getCurrentUser().username + '/grappImg/' + Math.round(Math.random()*100000000000),                                'AWSAccessKeyId': s3Params.AWSAccessKeyId,
                                 'acl' : 'public-read',                                'success_action_status' : '201',
                                 'Policy' : s3Params.s3Policy,
                                 'Signature' : s3Params.s3Signature,                                'Content-Type' : file.type
                             },
                             file: file
-                        });
-                        $scope.upload[i]
+                        })
+
+                        // $scope.upload[i]
                         .then(function(response) {
                             file.progress = parseInt(100);
                             if (response.status === 201) {
@@ -111,7 +68,6 @@ angular.module('grapptitude')
                                 };
                                 $scope.imageUploads.push(parsedData);
                                 console.log($scope.imageUploads);
-
                             } else {
                                 console.log('Upload Failed');
                             }
@@ -127,14 +83,11 @@ angular.module('grapptitude')
                       file.progress = parseInt(0);
                       loop(file, i);
                   }
-                };
+                }
 
             };
 
-
     $scope.newGrapp = {};
-    // var $input = $('#photoCover');
-
       $scope.newGrapp = function() {
         if($scope.newGrapp === '') {
           return;
@@ -150,8 +103,8 @@ angular.module('grapptitude')
           // tagedUser: $scope.newGrapp.tagedUser
         });
         $scope.newGrapp = '';
-        // $input.val('');
         // enrutar al wall aqui.
+        $cookieStore.put('token', token);
         $location.path('/grappWall');
       };
 

@@ -63,31 +63,31 @@ exports.getS3Policy = function(req, res) {
         }
     });
 };
+//
+// exports.index = function(req, res) {
+//     // createS3Policy(req.query.mimeType, function (creds, err) {
+//     //     if (!err) {
+//     //         return res.send(200, creds);
+//     //     } else {
+//     //         return res.send(500, err);
+//     //     }
+//     // });
+//     return res.json(200, {
+//         aws: {
+//             bucket: config.bucket
+//         }
+//     });
+// };
 
-exports.index = function(req, res) {
-    // createS3Policy(req.query.mimeType, function (creds, err) {
-    //     if (!err) {
-    //         return res.send(200, creds);
-    //     } else {
-    //         return res.send(500, err);
-    //     }
-    // });
-    return res.json(200, {
-        aws: {
-            bucket: config.bucket
-        }
-    });
-};
-
-
-exports.getAwsConfig = function (req, res, next) {
-    return res.json(200, {
-        aws: {
-            bucket: config.bucket
-        }
-    });
-};
-
+//
+// exports.getAwsConfig = function (req, res, next) {
+//     return res.json(200, {
+//         aws: {
+//             bucket: config.bucket
+//         }
+//     });
+// };
+//
 
 
 

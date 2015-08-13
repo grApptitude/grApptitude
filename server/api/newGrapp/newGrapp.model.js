@@ -10,7 +10,7 @@ var NewGrappSchema = new Schema({
   userImg: String,
   grapp: String,
   timestamp: Date,
-  attachUrl: String,
+  attachUrl: Array,
   tagedUser: String
 });
 
