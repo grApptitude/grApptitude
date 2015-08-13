@@ -46,7 +46,7 @@ angular.module('grapptitude')
 
       $scope.prueba = function(valor) {
         if (limitTextGrapp <= valor.length) {
-          console.log('nojoda');
+          console.log('probando');
           $scope.showTextGrapp = false;
         }
       };
