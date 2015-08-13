@@ -13,7 +13,7 @@
         <span>{{ grapp.grapp | limitTo: limitTextGrapp }}<a href ng-click="showMoreText(grapp.grapp)" ng-show="showTextGrapp"><span> expand </span></a></span>
       </blockquote>
       <attach ng-repeat="img in grapp.attachUrl">
-        <img src="{{ img.location }}" alt="{{grapp.userImg}}">
+        <img src="{{ img.location }}" alt=>
       </attach>
 
       <div class="actions">
